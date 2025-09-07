@@ -14,16 +14,19 @@ https://canvas.elte.hu/
 ### Group information
 
  #### Group 18
-   **Time:** 8:30 AM - 10:00 AM CET (CEST)
-   **Location**: D 00-412 (PC6)
+   - **Time:** 8:30 AM - 10:00 AM CET (CEST)
+   
+   - **Location**: D 00-412 (PC6)
 
  #### Group 12
-   **Time:** 8:30 AM - 10:00 AM CET (CEST)
-   **Location**: D 00-503 (PC8)
+   - **Time:** 8:30 AM - 10:00 AM CET (CEST)
+   
+   - **Location**: D 00-503 (PC8)
    
  #### Group 1
-   **Time:** 10:00 AM - 11:30 AM CET (CEST)
-   **Location**: D 00-503 (PC8)
+   - **Time:** 10:00 AM - 11:30 AM CET (CEST)
+   
+   - **Location**: D 00-503 (PC8)
 
 ---
 
@@ -38,8 +41,8 @@ https://canvas.elte.hu/
   - First ZH in the **9th week** of the semester (November 14, 2025)
   - Second ZH in the **13th week** of the semester (December 12, 2025)
 
-
 **Corrections of ZHs** - During the first week of the exam period (December 15 - 19, 2025) at an agreed time
+
 ---
 
 ### Requirements: 
