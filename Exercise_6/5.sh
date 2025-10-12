@@ -18,9 +18,13 @@ add_entry() {
     #   Exit status 0: A match was found.
     #   Exit status 1: No match was found.
     #   Exit status 2: An error occurred.
+
+    # "^$name,$phone$" → regex pattern that matches the exact line
+    # Example: if name="John" and phone="123", it matches "John,123"
     if grep -q "^$name,$phone$" "$registry_file"; then
         echo "Entry already exists in the registry."
     else
+        # Append the new entry to the registry file
         echo "$name,$phone" >> "$registry_file"
         echo "Entry added to the registry."
     fi
@@ -32,6 +36,8 @@ delete_entry() {
     local phone=$2
     
     # Delete the entry from the registry
+    # sed -i → edit the file in-place
+    # "/^$name,$phone$/d" → delete any line that matches exactly "name,phone"
     sed -i "/^$name,$phone$/d" "$registry_file"
     echo "Entry deleted from the registry."
 }
@@ -41,17 +47,31 @@ search_entry() {
     local name=$1
     
     # Search for the entry in the registry
+    # grep "^$name," → finds lines that start with "name,"
+    # cut -d',' -f2  → splits each matching line by comma (",")
+    #                   and extracts the *second field* (the phone number)
+
+    # Example:
+    #   If a line is "Alice,5551234"
+    #   -d',' tells cut to use ',' as a delimiter
+    #   -f2 tells cut to select the second field (i.e., "5551234")
     grep "^$name," "$registry_file" | cut -d',' -f2
 }
 
 # Function to count the number of entries in the registry
 count_entries() {
+    # wc -l → counts lines in the file
+    # "< $registry_file" redirects file input into wc
     local count=$(wc -l < "$registry_file")
     echo "Number of entries in the registry: $count"
 }
 
 # Function to list entries sorted by name
 list_entries() {
+    # sort   → sorts lines in a file
+    # -t','  → sets the delimiter to ',' (so fields are split at commas)
+    # -k1    → sort by the *first field* (the name)
+    # -o "$registry_file" → write the sorted output back to the same file
     sort -t',' -k1 -o "$registry_file" "$registry_file"
     cat "$registry_file"
 }

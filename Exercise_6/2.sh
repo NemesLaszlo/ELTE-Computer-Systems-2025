@@ -10,7 +10,7 @@ cleanup_and_exit() {
     
     # Remove the temporary file
     rm -f "$temp_file"
-    
+
     exit 0
 }
 
@@ -20,6 +20,7 @@ while true; do
     if [ "$word" == "vége" ]; then
         cleanup_and_exit
     else
+        # Append the new entry to the file
         echo "$word" >> "$temp_file"
     fi
 done
