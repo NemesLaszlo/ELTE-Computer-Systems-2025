@@ -123,3 +123,5 @@ Természetesen kommentekkel el tudjuk látni a scriptjeinket, ami a jövőbeli �
 
 ```# comment```
 
+További anyagok scriptingről: https://devhints.io/bash
+
